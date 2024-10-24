@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5; /* Светлый фон */
+    color: #333;
+    scroll-behavior: smooth;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2 {
+    font-size: 3em;
+    color: #333;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+p {
+    font-size: 1.2em;
+    max-width: 900px;
+    margin: 20px auto;
+    color: #666;
+}
+
+.slide {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    padding: 20px;
+    border-radius: 20px; /* Увеличенные закругленные углы */
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1); /* Более мягкая тень */
+    transition: background 1s ease-in-out, transform 0.3s; /* Плавный переход */
+    overflow: hidden; /* Скрыть переполнение */
+}
+
+.slide:hover {
+    transform: scale(1.02); /* Легкое увеличение при наведении */
+}
+
+#slide1 {
+    background: linear-gradient(135deg, #f7c0c0, #f8e2e2);
+}
+
+#slide2 {
+    background: linear-gradient(135deg, #c0f7c0, #e2f8e2);
+}
+
+#slide3 {
+    background: linear-gradient(135deg, #c0c0f7, #e2e2f8);
+}
+
+#slide4 {
+    background: linear-gradient(135deg, #f7f0c0, #f8f8e2);
+}
+
+#slide5 {
+    background: linear-gradient(135deg, #f0c0f7, #f8e2f8);
+}
+
+/* Добавление анимации фона */
+@keyframes backgroundAnimation {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+.content {
+    max-width: 800px;
+    padding: 40px;
+    color: #333;
+    border-radius: 15px; /* Закругленные углы */
+    background-color: rgba(255, 255, 255, 0.8); /* Полупрозрачный фон для текста */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень для контента */
+}
+
+/* Кнопка навигации */
+.nav-button {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    padding: 15px 30px;
+    background-color: #e63946;
+    color: #fff;
+    border: none;
+    border-radius: 25px; /* Закругленные углы */
+    font-size: 1.2em;
+    cursor: pointer;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.2s, box-shadow 0.2s; /* Плавные переходы */
+}
+
+.nav-button:hover {
+    background-color: #d62828;
+    transform: translateY(-2px);
+    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.3); /* Более выраженная тень при наведении */
+}
+
+.button-container {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 1000;
+}
+
+/* Добавление анимации к слайдам */
+.slide {
+    animation: backgroundAnimation 10s ease infinite; /* Анимация фона */
+    background-size: 200% 200%; /* Увеличенный размер фона для анимации */
+}
